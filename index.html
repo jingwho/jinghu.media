@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jing Hu — 2nd Order Thinkers</title>
+<meta name="description" content="Independent analyst on AI, enterprise software, and the bets behind them. Writer of 2nd Order Thinkers." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink: #020301;
+    --paper: #ffffff;
+    --mid: #6b7280;
+    --border: #d1d5db;
+    --accent: #ffdb15;
+    --col: 620px;
+    --page: 1200px;
+    --pad-section: 200px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection { background: var(--accent); color: var(--ink); }
+
+  .page {
+    max-width: var(--page);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .col {
+    max-width: var(--col);
+    margin: 0 auto;
+  }
+
+  /* ---------- Typography tiers ---------- */
+
+  h1, h2, h3 { margin: 0; }
+
+  .name {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .section-title {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    text-transform: lowercase;
+    color: var(--ink);
+    margin-bottom: 40px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-title .quiet {
+    font-weight: 400;
+    color: var(--mid);
+    letter-spacing: 0;
+  }
+
+  .lede {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+  }
+
+  p {
+    margin: 0 0 20px;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  strong { font-weight: 700; }
+
+  a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    transition: border-color 120ms linear, box-shadow 120ms linear;
+  }
+
+  a:hover {
+    border-bottom-color: var(--accent);
+    box-shadow: inset 0 -6px 0 var(--accent);
+  }
+
+  ul {
+    margin: 0 0 20px;
+    padding: 0 0 0 20px;
+  }
+
+  li { margin-bottom: 10px; }
+  li:last-child { margin-bottom: 0; }
+
+  /* ---------- Header ---------- */
+
+  header.top {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  .name-rule {
+    display: inline-block;
+    padding-bottom: 14px;
+    border-bottom: 4px solid var(--accent);
+  }
+
+  .tagline {
+    margin-top: 14px;
+    color: var(--mid);
+    font-size: 16px;
+    letter-spacing: 0.01em;
+  }
+
+  /* ---------- Sections ---------- */
+
+  section {
+    padding-top: var(--pad-section);
+    padding-bottom: 0;
+  }
+
+  section:last-of-type {
+    padding-bottom: var(--pad-section);
+  }
+
+  /* ---------- Recent writing list ---------- */
+
+  .posts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .posts li {
+    margin: 0;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .posts li:first-child { padding-top: 0; }
+  .posts li:last-child { border-bottom: 0; }
+
+  .posts a {
+    display: block;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .posts a:hover .post-title {
+    box-shadow: inset 0 -2px 0 var(--accent);
+  }
+
+  .post-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .post-meta {
+    font-size: 14px;
+    color: var(--mid);
+    letter-spacing: 0.01em;
+  }
+
+  .all-posts {
+    margin-top: 32px;
+    font-size: 15px;
+    color: var(--mid);
+  }
+
+  /* ---------- Contact block ---------- */
+
+  .contact {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 10px 24px;
+    font-size: 16px;
+  }
+
+  .contact dt {
+    color: var(--mid);
+    font-weight: 400;
+  }
+
+  .contact dd {
+    margin: 0;
+    color: var(--ink);
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer {
+    padding-top: var(--pad-section);
+    padding-bottom: 80px;
+    color: var(--mid);
+    font-size: 14px;
+  }
+
+  footer .col {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  /* ---------- Mobile ---------- */
+
+  @media (max-width: 720px) {
+    :root {
+      --pad-section: 96px;
+    }
+
+    body { font-size: 17px; }
+
+    .page { padding: 0 24px; }
+
+    header.top {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    .name { font-size: 24px; }
+    .lede { font-size: 26px; }
+    .post-title { font-size: 18px; }
+
+    .contact {
+      grid-template-columns: 1fr;
+      gap: 2px 0;
+    }
+
+    .contact dt { margin-top: 12px; }
+    .contact dt:first-child { margin-top: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="page">
+    <div class="col">
+      <h1 class="name"><span class="name-rule">Jing Hu</span></h1>
+      <div class="tagline">Independent analyst. Writer of <a href="https://www.2ndorderthinkers.com/" target="_blank" rel="noopener">2nd Order Thinkers</a>.</div>
+    </div>
+  </div>
+</header>
+
+<!-- ========== what this is ========== -->
+<section id="what">
+  <div class="page">
+    <div class="col">
+      <h2 class="section-title">what this is <span class="quiet">— the 30-second version</span></h2>
+
+      <p class="lede">I write about AI and enterprise software for people who have to make decisions about them.</p>
+
+      <p>Most AI coverage is either hype or panic. This isn't that. I read the papers, talk to the operators, and write what's actually happening — at <a href="https://www.2ndorderthinkers.com/" target="_blank" rel="noopener">2nd Order Thinkers</a> on Substack and on <a href="https://www.youtube.com/channel/UCBnkjD--nanVtOH76wJsaEw/" target="_blank" rel="noopener">YouTube</a>.</p>
+
+      <p>Quoted in Forbes on <a href="https://www.forbes.com/sites/hessiejones/2025/11/24/ai-is-not-killing-entry-level-jobs/" target="_blank" rel="noopener">entry-level jobs</a>, <a href="https://www.forbes.com/sites/hessiejones/2025/08/04/despite-billions-in-investment-ai-reasoning-models-are-falling-short/" target="_blank" rel="noopener">reasoning models</a>, and <a href="https://www.forbes.com/sites/hessiejones/2025/07/02/are-we-finally-ceding-control-to-the-machine-the-human-costs-of-ai-transformation/" target="_blank" rel="noopener">the human costs of AI transformation</a>. Read by CEOs, VPs, and engineers across tech, finance, law, and consulting.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== me in 10 seconds ========== -->
+<section id="me">
+  <div class="page">
+    <div class="col">
+      <h2 class="section-title">me in 10 seconds <span class="quiet">— or ninety, if you're thorough</span></h2>
+
+      <p>Chemistry PhD. Eight years in research — papers, <a href="https://bit.ly/jinghugooglescholar" target="_blank" rel="noopener">citations</a>, the lot. Ten years in tech after that — cybersecurity at Transport for London, building ordering systems at Just Eat Takeaway, and running my own AI voice startup in 2020 before anyone was calling it generative AI.</p>
+
+      <p>Went independent in August 2024 to write full-time. Based in London.</p>
+
+      <p>I pick topics the way I used to pick research problems: is the evidence there, does the second-order effect matter, and will anyone still care about this in two years.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== recent writing ========== -->
+<section id="writing">
+  <div class="page">
+    <div class="col">
+      <h2 class="section-title">recent writing <span class="quiet">— auto-updated from Substack</span></h2>
+
+      <ul class="posts" id="rss-list">
+        <!-- Populated at build time from https://www.2ndorderthinkers.com/feed -->
+        <li><a href="#"><div class="post-title">Loading the latest posts…</div><div class="post-meta">—</div></a></li>
+      </ul>
+
+      <div class="all-posts"><a href="https://www.2ndorderthinkers.com/archive" target="_blank" rel="noopener">All posts on Substack →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== on video ========== -->
+<section id="video">
+  <div class="page">
+    <div class="col">
+      <h2 class="section-title">on video <span class="quiet">— same brain, different medium</span></h2>
+
+      <p>I run <a href="https://www.youtube.com/channel/UCBnkjD--nanVtOH76wJsaEw/" target="_blank" rel="noopener">Second Order Thinkers</a> on YouTube — long-form, data-driven takes on AI and the enterprise stack. No face-cam hysterics. Charts, primary sources, and a view.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== working together ========== -->
+<section id="work">
+  <div class="page">
+    <div class="col">
+      <h2 class="section-title">working together <span class="quiet">— because independent research doesn't fund itself</span></h2>
+
+      <p>I don't run ads or sponsored posts, which means the bills get paid from the work below. If any of it is useful, I'd love to hear from you. Three things I do:</p>
+
+      <p><strong>Speaking.</strong> Keynotes, panels, off-record sessions on AI strategy, the enterprise software stack, and where the hype-to-reality gap is actually costing people money. Tech conferences, industry events, internal leadership offsites. Paid.</p>
+
+      <p><strong>Commissioned research.</strong> Deep-dive articles or private memos on a specific thesis — market sizing, due diligence on a category, a stress-test of a strategy you've already committed to. Delivered as a written piece, published off-platform under your name or as an unbranded internal deliverable. Previous bylines include Forbes. No ghostwriting of the newsletter itself.</p>
+
+      <p><strong>Advisory.</strong> Ongoing relationships with a small number of funds, operators, and leadership teams who want a second brain on AI bets — what to buy, what to build, what to ignore. Usually a monthly retainer with a call cadence and ad-hoc memos.</p>
+
+      <p>Get in touch: <a href="mailto:jing@ardonio.com">jing@ardonio.com</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== the fine print ========== -->
+<section id="ethics">
+  <div class="page">
+    <div class="col">
+      <h2 class="section-title">the fine print <span class="quiet">— because it matters</span></h2>
+
+      <ul>
+        <li>I don't do sponsored posts on the newsletter or the channel. No native ads, no "in partnership with," no placed mentions.</li>
+        <li>Paid work happens off-platform — keynotes, private reports, retainers. It's never dressed up as editorial.</li>
+        <li>I invest in public markets, tech included. If I hold a position in a company I write about, I disclose it at the top of that post.</li>
+        <li>If something I write is wrong, I correct it — in the post, with a dated note, not quietly.</li>
+        <li>No AI-generated text pretending to be me. The writing is mine. The voice is mine. The mistakes are mine.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========== elsewhere ========== -->
+<section id="elsewhere">
+  <div class="page">
+    <div class="col">
+      <h2 class="section-title">elsewhere <span class="quiet">— if you must</span></h2>
+
+      <dl class="contact">
+        <dt>Newsletter</dt>
+        <dd><a href="https://www.2ndorderthinkers.com/" target="_blank" rel="noopener">2nd Order Thinkers</a></dd>
+
+        <dt>YouTube</dt>
+        <dd><a href="https://www.youtube.com/channel/UCBnkjD--nanVtOH76wJsaEw/" target="_blank" rel="noopener">Second Order Thinkers</a></dd>
+
+        <dt>LinkedIn</dt>
+        <dd><a href="https://www.linkedin.com/in/jing--hu/" target="_blank" rel="noopener">linkedin.com/in/jing--hu</a></dd>
+
+        <dt>Google Scholar</dt>
+        <dd><a href="https://bit.ly/jinghugooglescholar" target="_blank" rel="noopener">the old papers</a></dd>
+
+        <dt>Email</dt>
+        <dd><a href="mailto:jing@ardonio.com">jing@ardonio.com</a></dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="page">
+    <div class="col">
+      <div>© Ardonio Ltd — Jing Hu</div>
+      <div>London</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // posts.json is refreshed every 2 hours by .github/workflows/update-rss.yml
+  // which reads https://www.2ndorderthinkers.com/feed and commits the top 5.
+  (function () {
+    var list = document.getElementById('rss-list');
+    var escape = function (s) {
+      return String(s).replace(/[&<>"']/g, function (c) {
+        return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];
+      });
+    };
+    fetch('posts.json', { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (posts) {
+        if (!posts || !posts.length) throw new Error('empty');
+        list.innerHTML = posts.map(function (p) {
+          return '<li><a href="' + escape(p.url) + '" target="_blank" rel="noopener">' +
+                 '<div class="post-title">' + escape(p.title) + '</div>' +
+                 '<div class="post-meta">' + escape(p.date) + ' \u00b7 2nd Order Thinkers</div>' +
+                 '</a></li>';
+        }).join('');
+      })
+      .catch(function () {
+        list.innerHTML = '<li><a href="https://www.2ndorderthinkers.com/archive" target="_blank" rel="noopener">' +
+          '<div class="post-title">Read the latest on Substack \u2192</div>' +
+          '<div class="post-meta">Feed temporarily unavailable</div></a></li>';
+      });
+  })();
+</script>
+
+</body>
+</html>
